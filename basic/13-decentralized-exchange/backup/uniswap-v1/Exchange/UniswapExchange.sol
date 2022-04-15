@@ -19,13 +19,13 @@ contract UniswapExchange {
     /// STORAGE
     uint256 public ethPool;
     uint256 public tokenPool;
-    uint256 public invariant;
+    uint256 public invariant;             //不变量?
     uint256 public totalShares;
     address public tokenAddress;
     address public factoryAddress;
     mapping(address => uint256) shares;
-    ERC20Interface token;
-    FactoryInterface factory;
+    ERC20Interface token;                //token使用erc20接口
+    FactoryInterface factory;            //factory使用factory接口
 
     /// MODIFIERS
     modifier exchangeInitialized() {
@@ -44,7 +44,7 @@ contract UniswapExchange {
     /// FALLBACK FUNCTION
     function() public payable {
         require(msg.value != 0);
-        ethToToken(msg.sender, msg.sender, msg.value, 1);
+        ethToToken(msg.sender, msg.sender, msg.value, 1);      //?
     }
 
     /// EXTERNAL FUNCTIONS
