@@ -1,6 +1,6 @@
 pragma solidity ^0.4.18;
 
-
+//mul乘法，div除法，sub减法，add加法
 library SafeMath {
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {
         if (a == 0) {
